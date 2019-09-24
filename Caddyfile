@@ -1,0 +1,10 @@
+ryanc.irish, www.ryanc.irish {
+ root ./dist
+ gzip
+}
+
+ryanc.irish/com, www.ryanc.irish/com {
+ root ./com
+ gzip
+}
+
