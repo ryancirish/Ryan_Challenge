@@ -21,11 +21,15 @@ class Complex(object):
         return Complex(real, img)
 
     def __truediv__(self, no):
-        num1 = self.real * no.real - self.imaginary * no.imaginary
-        num2 = self.real * no.imaginary + self.imaginary * no.real
+        conjugate_real = no.real  
+        conjugate_imaginary = -no.imaginary
+
+        one = self.real * conjugate_real - self.imaginary * conjugate_imaginary
+        two = self.real * conjugate_imaginary + self.imaginary * conjugate_real        
         denominator = no.real ** 2 + no.imaginary ** 2
-        real = num1 / denominator
-        img = num2 / denominator
+        
+        real = one / denominator
+        img = two / denominator
         return Complex(real, img)
 
     def mod(self):
